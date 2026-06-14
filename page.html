@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Virtuality Zone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                <span class="logo-text">Virtuality<span class="logo-accent">Zone</span></span>
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="about.html" class="nav-link">О нас</a>
+                <a href="page.html" class="nav-link active">Контакты</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" title="Переключить тему">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">3</span>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero contacts-hero">
+        <div class="container">
+            <h1 class="page-hero-title">Наши <span class="gradient-text">контакты</span></h1>
+            <p class="page-hero-subtitle">Ждём вас в гости!</p>
+        </div>
+    </section>
+
+    <section class="contacts-section">
+        <div class="container">
+            <div class="contacts-grid">
+                <div class="contact-card fade-in-up">
+                    <div class="contact-card-icon"><i class="fas fa-phone-volume"></i></div>
+                    <h3>Телефон</h3>
+                    <a href="tel:+74957778899" class="contact-value">+7 (495) 777-88-99</a>
+                    <p>Ежедневно с 9:00 до 21:00</p>
+                </div>
+                <div class="contact-card fade-in-up">
+                    <div class="contact-card-icon"><i class="fas fa-location-dot"></i></div>
+                    <h3>Адрес магазина</h3>
+                    <span class="contact-value">г. Москва, ул. Кибернетическая, д. 15</span>
+                    <p>ТЦ "Электронный Квартал", 3 этаж, павильон 42</p>
+                </div>
+                <div class="contact-card fade-in-up">
+                    <div class="contact-card-icon"><i class="fas fa-envelope-open-text"></i></div>
+                    <h3>Email</h3>
+                    <a href="mailto:hello@virtualityzone.ru" class="contact-value">hello@virtualityzone.ru</a>
+                    <p>Отвечаем в течение 1 часа</p>
+                </div>
+            </div>
+            <div class="map-container fade-in-up">
+                <h2>Как нас найти</h2>
+                <div class="map-placeholder">
+                    <i class="fas fa-map-pin"></i>
+                    <p>г. Москва, ул. Кибернетическая, д. 15<br>ТЦ "Электронный Квартал", 3 этаж</p>
+                    <span>📍 Метро «Технопарк», выход №3</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo">
+                    <i class="fas fa-bolt logo-icon"></i>
+                    <span class="logo-text">Virtuality<span class="logo-accent">Zone</span></span>
+                </a>
+                <p>Ваш проводник в мир современной электроники.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Каталог</h4>
+                <ul>
+                    <li><a href="#">Ноутбуки</a></li>
+                    <li><a href="#">Смартфоны</a></li>
+                    <li><a href="#">Телевизоры</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Компания</h4>
+                <ul>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="page.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <ul class="contact-list">
+                    <li><i class="fas fa-phone"></i> +7 (495) 777-88-99</li>
+                    <li><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Кибернетическая, д. 15</li>
+                    <li><i class="fas fa-envelope"></i> hello@virtualityzone.ru</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Virtuality Zone. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', savedTheme);
+        themeToggle.addEventListener('click', () => {
+            const next = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
